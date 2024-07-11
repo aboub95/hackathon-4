@@ -1,0 +1,52 @@
+
+@import url(./header.css);
+@import url(./main.css);
+@import url(./footer.css);
+
+
+
+
+:root {
+    --primary-color: #1d89d1;
+    --secondary-color: red;
+    --background-color: #f4f7f9;
+    --text-color: #131212;
+    --white: #ffffff;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
