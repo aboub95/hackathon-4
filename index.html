@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <div class="container">
+    <div class="logo">
+      <!-- <img src="https://ecole241.com/logo.png" alt="Logo Ecole241" width="200" height="100"> -->
+    </div>
+    <h1>Formulaire d'inscription à Ecole241</h1>
+    <form action="/submit-inscription" method="POST" enctype="multipart/form-data">
+      <h2>Informations personnelles</h2>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+      
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required>
+      
+      <label for="date_naissance">Date de naissance :</label>
+      <input type="date" id="date_naissance" name="date_naissance" required>
+      
+      <h2>Coordonnées</h2>
+      <label for="adresse">Adresse :</label>
+      <textarea id="adresse" name="adresse" rows="3" required></textarea>
+      
+      <label for="telephone">Téléphone :</label>
+      <input type="tel" id="telephone" name="telephone" required>
+      
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+      
+      <h2>Choix de la formation</h2>
+      <label for="formation">Sélectionnez votre formation :</label>
+      <select id="formation" name="formation" required>
+        <option value="">Choisissez une formation</option>
+        <option value="dev_web">Développement Web</option>
+        <option value="data_science">Data Science</option>
+        <option value="design_graphique">Design Graphique</option>
+        <option value="marketing_digital">Marketing Digital</option>
+        <option value="entrepreneuriat">Entrepreneuriat Numérique</option>
+      </select>
+      
+      <h2>Documents à télécharger</h2>
+      <div class="file-upload">
+        <label for="cv">CV :</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+      </div>
+      
+      <div class="file-upload">
+        <label for="lettre_motivation">Lettre de motivation :</label>
+        <input type="file" id="lettre_motivation" name="lettre_motivation" accept=".pdf,.doc,.docx" required>
+      </div>
+      
+      <div class="file-upload">
+        <label for="diplomes">Diplômes :</label>
+        <input type="file" id="diplomes" name="diplomes" accept=".pdf,.jpg,.jpeg,.png" multiple>
+      </div>
+      
+      <input type="submit" value="Valider l'inscription" class="submit-btn">
+    </form>
+
+    <footer>
+      <p>Pour plus d'informations sur nos formations, visitez notre <a href="https://ecole241.com/formations">page des formations</a>.</p>
+      <p>Des questions ? Contactez-nous à <a href="/cdn-cgi/l/email-protection#2b42454d446b4e4844474e191f1a05484446"><span class="__cf_email__" data-cfemail="c2abaca4ad82a7a1adaea7f0f6f3eca1adaf">[email&#160;protected]</span></a> ou appelez le <a href="tel:+24165432100">+241 65 43 21 00</a>.</p>
+      <p>Suivez-nous sur : 
+        <a href="https://www.facebook.com/Ecole241">Facebook</a> | 
+        <a href="https://www.twitter.com/Ecole241">Twitter</a> | 
+        <a href="https://www.linkedin.com/company/ecole241">LinkedIn</a> | 
+        <a href="https://www.instagram.com/Ecole241">Instagram</a>
+      </p>
+      <p>&copy; 2023 Ecole241. Tous droits réservés.</p>
+    </footer>
+  </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
+    
+</body>
+</html>
