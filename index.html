@@ -1,0 +1,436 @@
+<html><head><base href="https://ecole241.ga/" />
+<title>École 241 - Formation au Numérique au Gabon</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --primary-color: #0052cc;
+    --secondary-color: #ff9900;
+    --background-color: #f4f7f9;
+    --text-color: #333;
+    --white: #ffffff;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header {
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin-left: 1.5rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+  
+  .cta-button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #e68a00;
+  }
+  
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding-top: 80px;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-cta {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  .hero-cta:hover {
+    background-color: #e68a00;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+  }
+  
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .about-text {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .about-image {
+    flex: 1;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .formations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .formation-card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .formation-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .formation-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .formation-card-content {
+    padding: 1.5rem;
+  }
+  
+  .formation-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .formation-card p {
+    margin-bottom: 1rem;
+  }
+  
+  .formation-card a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formation-card a:hover {
+    background-color: #0042a3;
+  }
+  
+  .testimonials {
+    background-color: var(--white);
+  }
+  
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-card h4 {
+    color: var(--primary-color);
+  }
+  
+  footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-section ul li a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    
+    .hero h2 {
+      font-size: 2rem;
+    }
+    
+    .hero p {
+      font-size: 1rem;
+    }
+    
+    .about-content {
+      flex-direction: column;
+    }
+    
+    .about-text {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-section {
+      flex: 100%;
+      margin-right: 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <img src="https://via.placeholder.com/50x50.png?text=E241" alt="Logo École 241">
+        <h1>École 241</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="https://ecole241.ga/">Accueil</a></li>
+        <li><a href="https://ecole241.ga/formations">Formations</a></li>
+        <li><a href="https://ecole241.ga/inscription">Inscription</a></li>
+        <li><a href="https://ecole241.ga/actualites">Actualités</a></li>
+        <li><a href="https://ecole241.ga/contact">Contact</a></li>
+        <li><a href="https://ecole241.ga/inscription" class="cta-button">S'inscrire</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Formez-vous aux Métiers du Numérique au Gabon</h2>
+        <p>École 241 : L'école du code et des métiers du numérique pour propulser votre carrière dans le digital</p>
+        <a href="https://ecole241.ga/formations" class="hero-cta">Découvrir nos formations</a>
+        <a href="https://ecole241.ga/inscription" class="hero-cta">Inscrivez-vous</a>
+      </div>
+    </section>
+
+    <section class="section about">
+      <div class="container">
+        <h2 class="section-title">À propos de l'École 241</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>L'École 241 est un établissement de formation innovant basé au Gabon, dédié à l'enseignement des compétences numériques essentielles pour le 21e siècle. Notre mission est de former la prochaine génération de développeurs, designers et entrepreneurs numériques gabonais.</p>
+            <p>Nos valeurs : innovation, excellence, collaboration et impact social.</p>
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Étudiants de l'École 241" width="600" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section formations">
+      <div class="container">
+        <h2 class="section-title">Nos Formations</h2>
+        <div class="formations-grid">
+          <div class="formation-card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Développement Web" width="400" height="200">
+            <div class="formation-card-content">
+              <h3>Développement Web</h3>
+              <p>Apprenez à créer des sites web modernes et des applications web performantes.</p>
+              <a href="https://ecole241.ga/formations/developpement-web">En savoir plus</a>
+            </div>
+          </div>
+          <div class="formation-card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Référent Digital" width="400" height="200">
+            <div class="formation-card-content">
+              <h3>Référent Digital</h3>
+              <p>Devenez un expert en marketing digital et stratégie numérique.</p>
+              <a href="https://ecole241.ga/formations/referent-digital">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <h2 class="section-title">Témoignages</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Portrait de Marie" width="80" height="80">
+            <p>"Grâce à l'École 241, j'ai pu acquérir les compétences nécessaires pour lancer ma propre startup tech. Une expérience incroyable !"</p>
+            <h4>Marie K.</h4>
+            <p>Promotion 2022</p>
+          </div>
+          <div class="testimonial-card">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Portrait de Jean" width="80" height="80">
+            <p>"Les formateurs sont passionnés et l'ambiance est stimulante. J'ai trouvé un emploi dans une grande entreprise dès la fin de ma formation."</p>
+            <h4>Jean M.</h4>
+            <p>Promotion 2021</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3>École 241</h3>
+        <p>L'école du code et des métiers du numérique au Gabon</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="https://ecole241.ga/contact">Contact</a></li>
+          <li><a href="https://ecole241.ga/mentions-legales">Mentions légales</a></li>
+          <li><a href="https://ecole241.ga/politique-de-confidentialite">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-icons">
+          <a href="https
