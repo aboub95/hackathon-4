@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./form.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Inscription Sécurisée avec QR Code Personnalisé</h1>
+      </header>
+    
+      <div class="container">
+        <main>
+          <h2>Formulaire d'Inscription</h2>
+          <p>Remplissez le formulaire ci-dessous pour générer votre QR Code personnalisé d'authentification.</p>
+          
+          <form id="registrationForm">
+            <label for="name">Nom complet:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Adresse e-mail:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Numéro de téléphone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="birthdate">Date de naissance:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+            
+            <label for="program">Programme souhaité:</label>
+            <select id="program" name="program" required>
+              <option value="">Choisissez un programme</option>
+              <option value="web_development">Développement Web</option>
+              <option value="data_science">Science des Données</option>
+              <option value="ai_ml">Intelligence Artificielle et Machine Learning</option>
+              <option value="cybersecurity">Cybersécurité</option>
+              <option value="ux_design">UX Design</option>
+            </select>
+            
+            <button type="submit">Générer mon QR Code personnalisé</button>
+          </form>
+        </main>
+    
+        <section class="qr-section">
+          <h3>Votre QR Code Personnalisé</h3>
+          <div id="personalQRCode" class="qr-code">
+            <!-- Le QR code sera inséré ici par JavaScript -->
+          </div>
+          <p>Ce QR Code contient vos informations d'inscription cryptées. Conservez-le précieusement pour votre authentification.</p>
+        </section>
+
+        <script>
+           document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Collecte des données du formulaire
+  const formData = new FormData(this);
+  const userData = Object.fromEntries(formData.entries());
+  
+  // Simulation de cryptage des données (dans un environnement réel, utilisez une véritable encryption)
+  const encryptedData = btoa(JSON.stringify(userData));
+  
+  // Génération d'un ID unique pour l'inscription
+  const uniqueId = 'REG' + Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+  
+  // Création de l'URL avec les données cryptées
+  const qrData = `https://localhost/verify?id=${uniqueId}&data=${encryptedData}`;
+  
+  // Génération du QR Code
+  const qrCodeContainer = document.getElementById('personalQRCode');
+  qrCodeContainer.innerHTML = ''; // Nettoyage du contenu précédent
+  new QRCode(qrCodeContainer, {
+    text: qrData,
+    width: 200,
+    height: 200
+  });
+  
+  // Affichage du QR Code
+  qrCodeContainer.style.display = 'inline-block';
+});
+
+        </script>
+</body>
+</html>
