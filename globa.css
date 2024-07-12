@@ -2,12 +2,14 @@
 @import url(./header.css);
 @import url(./main.css);
 @import url(./footer.css);
+@import url(./form.css);
+@import url(./formation.css);
 
 
 
 
 :root {
-    --primary-color: #1d89d1;
+    --primary-color: #092e47;
     --secondary-color: red;
     --background-color: #f4f7f9;
     --text-color: #131212;
@@ -25,6 +27,10 @@
     line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
+  }
+
+  .nav-links_a{
+    color: #fff;
   }
 
 

@@ -1,4 +1,7 @@
-.container {
+*{
+  padding: 0%;
+  margin: 0%;
+}.container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -27,19 +30,22 @@
   }
   
   .logo img {
-    /* width: 50px;
-    height: 50px;
-    margin-right: 10px; */
+     width: 80px;
+    height: 60px;
+    margin-right: 10px; 
   }
   
   .logo h1 {
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: white;
   }
+
+ 
   
   .nav-links {
     display: flex;
     list-style: none;
+   
   }
   
   .nav-links li {
@@ -48,7 +54,7 @@
   
   .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #fff;
     font-weight: 500;
     transition: color 0.3s ease;
   }
@@ -70,47 +76,7 @@
     background-color: #d3cccc;
   }
   
-  .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--white);
-    padding-top: 80px;
-  }
   
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .hero-cta {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin: 0 10px;
-  }
-  
-  .hero-cta:hover {
-    background-color: #e7e5e1;
-  }
 
 .logoE{
   height: 105px;

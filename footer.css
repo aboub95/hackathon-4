@@ -146,7 +146,12 @@ footer {
   } -->
 
 
+.social-icons{
+  height: 80px;
+  width: 5%;
+  display: flex;
 
+}
 
 
 
